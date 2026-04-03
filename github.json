@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-03T04:36:58.737Z",
+  "updatedAt": "2026-04-03T04:40:49.643Z",
   "createdAt": "2026-04-03T02:38:25.740Z",
   "id": "gs539MFESzhOvafG",
   "name": "Salvar GIT",
@@ -7,17 +7,6 @@
   "active": false,
   "isArchived": false,
   "nodes": [
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -368,
-        0
-      ],
-      "id": "e87c4804-9f24-48f9-ac39-a06919b058d6",
-      "name": "When clicking ‘Execute workflow’"
-    },
     {
       "parameters": {
         "url": "http://host.docker.internal:5678/api/v1/workflows/gs539MFESzhOvafG",
@@ -175,20 +164,40 @@
           "name": "GitHub account"
         }
       }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 0 * * *"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -432,
+        112
+      ],
+      "id": "2877142d-eda1-4d11-8a8a-c607b901e303",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -432,
+        -80
+      ],
+      "id": "37332ee3-54bd-4390-887f-9b8a6dd65148",
+      "name": "When clicking ‘Execute workflow’"
     }
   ],
   "connections": {
-    "When clicking ‘Execute workflow’": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "HTTP Request": {
       "main": [
         [
@@ -233,6 +242,28 @@
       "main": [
         []
       ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
@@ -244,9 +275,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "e6d51b58-5116-4153-a61f-1e2440c1607b",
+  "versionId": "64498a35-aba8-450b-a768-8c271b46da3d",
   "activeVersionId": null,
-  "versionCounter": 154,
+  "versionCounter": 166,
   "triggerCount": 0,
   "shared": [
     {
