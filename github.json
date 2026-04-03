@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-03T04:40:49.643Z",
+  "updatedAt": "2026-04-03T04:41:42.525Z",
   "createdAt": "2026-04-03T02:38:25.740Z",
   "id": "gs539MFESzhOvafG",
   "name": "Salvar GIT",
@@ -171,7 +171,7 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "0 0 * * *"
+              "expression": "0 * * * *"
             }
           ]
         }
@@ -180,7 +180,7 @@
       "typeVersion": 1.3,
       "position": [
         -432,
-        112
+        96
       ],
       "id": "2877142d-eda1-4d11-8a8a-c607b901e303",
       "name": "Schedule Trigger"
@@ -275,9 +275,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "64498a35-aba8-450b-a768-8c271b46da3d",
+  "versionId": "f90c8542-6ce1-45a9-8979-40236dab9bcc",
   "activeVersionId": null,
-  "versionCounter": 166,
+  "versionCounter": 168,
   "triggerCount": 0,
   "shared": [
     {
