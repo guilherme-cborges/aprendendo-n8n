@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-03T04:23:22.061Z",
+  "updatedAt": "2026-04-03T04:32:13.328Z",
   "createdAt": "2026-04-03T02:38:25.740Z",
   "id": "gs539MFESzhOvafG",
   "name": "Salvar GIT",
@@ -45,17 +45,17 @@
         "resource": "file",
         "owner": {
           "__rl": true,
-          "value": "guilherme-cborges",
+          "value": "={{ $('HTTP Request').item.json.nodes[2].parameters.owner.value }}",
           "mode": "name"
         },
         "repository": {
           "__rl": true,
-          "value": "aprendendo-n8n",
+          "value": "={{ $('HTTP Request').item.json.nodes[2].parameters.repository.value }}",
           "mode": "name"
         },
-        "filePath": "n8n.json",
+        "filePath": "={{ $('HTTP Request').item.json.nodes[2].parameters.filePath }}",
         "fileContent": "={{ JSON.stringify($json, null, 2) }}",
-        "commitMessage": "Atualização"
+        "commitMessage": "Criação"
       },
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -79,15 +79,15 @@
         "operation": "get",
         "owner": {
           "__rl": true,
-          "value": "={{ $json.nodes[2].parameters.owner.value }}",
+          "value": "guilherme-cborges",
           "mode": "name"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $json.nodes[2].parameters.repository.value }}",
+          "value": "aprendendo-n8n",
           "mode": "name"
         },
-        "filePath": "=n8n.json",
+        "filePath": "n8n.json",
         "asBinaryProperty": false,
         "additionalParameters": {}
       },
@@ -148,15 +148,15 @@
         "operation": "edit",
         "owner": {
           "__rl": true,
-          "value": "={{ $('HTTP Request').item.json.nodes[2].parameters.owner.value }}",
+          "value": "guilherme-cborges",
           "mode": "name"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('HTTP Request').item.json.nodes[2].parameters.repository.value }}",
+          "value": "aprendendo-git",
           "mode": "name"
         },
-        "filePath": "={{ $('HTTP Request').item.json.nodes[2].parameters.filePath }}",
+        "filePath": "n8n.json",
         "fileContent": "={{ JSON.stringify($('HTTP Request').item.json, null, 2) }}",
         "commitMessage": "Atualização"
       },
@@ -244,9 +244,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "385f5de1-c075-4686-a70f-751a31c9cfa6",
+  "versionId": "446b1383-1ac9-4d10-8119-496ed24aeb1f",
   "activeVersionId": null,
-  "versionCounter": 105,
+  "versionCounter": 132,
   "triggerCount": 0,
   "shared": [
     {
