@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-03T04:32:13.328Z",
+  "updatedAt": "2026-04-03T04:34:40.206Z",
   "createdAt": "2026-04-03T02:38:25.740Z",
   "id": "gs539MFESzhOvafG",
   "name": "Salvar GIT",
@@ -148,15 +148,15 @@
         "operation": "edit",
         "owner": {
           "__rl": true,
-          "value": "guilherme-cborges",
+          "value": "={{ $('HTTP Request').item.json.nodes[2].parameters.owner.value }}",
           "mode": "name"
         },
         "repository": {
           "__rl": true,
-          "value": "aprendendo-git",
+          "value": "={{ $('HTTP Request').item.json.nodes[2].parameters.repository.value }}",
           "mode": "name"
         },
-        "filePath": "n8n.json",
+        "filePath": "={{ $('HTTP Request').item.json.nodes[2].parameters.filePath }}",
         "fileContent": "={{ JSON.stringify($('HTTP Request').item.json, null, 2) }}",
         "commitMessage": "Atualização"
       },
@@ -244,9 +244,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "446b1383-1ac9-4d10-8119-496ed24aeb1f",
+  "versionId": "6f626241-f3c7-4949-b7e9-96e64dac33a8",
   "activeVersionId": null,
-  "versionCounter": 132,
+  "versionCounter": 139,
   "triggerCount": 0,
   "shared": [
     {
