@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-04-06T02:13:27.836Z",
+  "updatedAt": "2026-04-06T02:16:44.792Z",
   "createdAt": "2026-04-04T20:49:09.498Z",
   "id": "w5HEHbieJ2S0Lv2k",
   "name": "Salvar GIT",
   "description": null,
-  "active": false,
+  "active": true,
   "isArchived": false,
   "nodes": [
     {
@@ -18,7 +18,7 @@
       "typeVersion": 4.4,
       "position": [
         272,
-        96
+        112
       ],
       "id": "e70f0193-83e3-4168-83e8-a2d1693b5466",
       "name": "HTTP Request",
@@ -51,7 +51,7 @@
       "typeVersion": 1.1,
       "position": [
         496,
-        96
+        112
       ],
       "id": "a8ec2478-6e92-4c97-be12-76434112703f",
       "name": "Get a file",
@@ -93,7 +93,7 @@
       "typeVersion": 2.3,
       "position": [
         720,
-        96
+        112
       ],
       "id": "7b01c481-10fa-402e-8828-9403631899aa",
       "name": "If",
@@ -114,7 +114,7 @@
       "typeVersion": 1.3,
       "position": [
         48,
-        96
+        112
       ],
       "id": "ac5781af-65eb-4294-920f-b2f34dd58f60",
       "name": "Schedule Trigger"
@@ -139,8 +139,8 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        896,
-        192
+        944,
+        208
       ],
       "id": "4856fad8-9fd4-4bf6-9490-f4b9c14fa13e",
       "name": "Create a file",
@@ -173,7 +173,7 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        896,
+        944,
         16
       ],
       "id": "2a62ad46-711d-4528-991c-215a28cf2f30",
@@ -253,9 +253,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "436f5d22-f869-4e21-a141-57e1c21bc41c",
-  "activeVersionId": null,
-  "versionCounter": 99,
+  "versionId": "c62ed87c-3c63-4f77-ad80-6ca11a4eb02b",
+  "activeVersionId": "c62ed87c-3c63-4f77-ad80-6ca11a4eb02b",
+  "versionCounter": 104,
   "triggerCount": 1,
   "shared": [
     {
@@ -277,5 +277,258 @@
     }
   ],
   "tags": [],
-  "activeVersion": null
+  "activeVersion": {
+    "updatedAt": "2026-04-06T02:16:49.000Z",
+    "createdAt": "2026-04-06T02:16:44.793Z",
+    "versionId": "c62ed87c-3c63-4f77-ad80-6ca11a4eb02b",
+    "workflowId": "w5HEHbieJ2S0Lv2k",
+    "nodes": [
+      {
+        "parameters": {
+          "url": "http://host.docker.internal:5678/api/v1/workflows/w5HEHbieJ2S0Lv2k",
+          "authentication": "genericCredentialType",
+          "genericAuthType": "httpHeaderAuth",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.4,
+        "position": [
+          272,
+          112
+        ],
+        "id": "e70f0193-83e3-4168-83e8-a2d1693b5466",
+        "name": "HTTP Request",
+        "credentials": {
+          "httpHeaderAuth": {
+            "id": "6ebEs7dhHMqlPUYA",
+            "name": "Header Auth account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "file",
+          "operation": "get",
+          "owner": {
+            "__rl": true,
+            "value": "guilherme-cborges",
+            "mode": "name"
+          },
+          "repository": {
+            "__rl": true,
+            "value": "aprendendo-n8n",
+            "mode": "name"
+          },
+          "filePath": "github.json",
+          "asBinaryProperty": false,
+          "additionalParameters": {}
+        },
+        "type": "n8n-nodes-base.github",
+        "typeVersion": 1.1,
+        "position": [
+          496,
+          112
+        ],
+        "id": "a8ec2478-6e92-4c97-be12-76434112703f",
+        "name": "Get a file",
+        "webhookId": "dd7670c1-31b4-460b-9011-cb2b7f05b5cb",
+        "credentials": {
+          "githubApi": {
+            "id": "koXPYBtIPVu6KAZH",
+            "name": "GitHub account"
+          }
+        },
+        "onError": "continueRegularOutput"
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 3
+            },
+            "conditions": [
+              {
+                "id": "5cffe922-5e7a-4acf-b834-e0d75add717e",
+                "leftValue": "={{ $json.sha }}",
+                "rightValue": "",
+                "operator": {
+                  "type": "string",
+                  "operation": "notEmpty",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.3,
+        "position": [
+          720,
+          112
+        ],
+        "id": "7b01c481-10fa-402e-8828-9403631899aa",
+        "name": "If",
+        "alwaysOutputData": false
+      },
+      {
+        "parameters": {
+          "rule": {
+            "interval": [
+              {
+                "field": "cronExpression",
+                "expression": "0 0 * * * *"
+              }
+            ]
+          }
+        },
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "typeVersion": 1.3,
+        "position": [
+          48,
+          112
+        ],
+        "id": "ac5781af-65eb-4294-920f-b2f34dd58f60",
+        "name": "Schedule Trigger"
+      },
+      {
+        "parameters": {
+          "resource": "file",
+          "owner": {
+            "__rl": true,
+            "value": "guilherme-cborges",
+            "mode": "name"
+          },
+          "repository": {
+            "__rl": true,
+            "mode": "name",
+            "value": "aprendendo-n8n"
+          },
+          "filePath": "github.json",
+          "fileContent": "={{ JSON.stringify($('HTTP Request').item.json, null, 2) }}",
+          "commitMessage": "Criação"
+        },
+        "type": "n8n-nodes-base.github",
+        "typeVersion": 1.1,
+        "position": [
+          944,
+          208
+        ],
+        "id": "4856fad8-9fd4-4bf6-9490-f4b9c14fa13e",
+        "name": "Create a file",
+        "webhookId": "0e92e62d-ec40-4fda-b0b8-f18496609ad8",
+        "credentials": {
+          "githubApi": {
+            "id": "koXPYBtIPVu6KAZH",
+            "name": "GitHub account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "file",
+          "operation": "edit",
+          "owner": {
+            "__rl": true,
+            "value": "guilherme-cborges",
+            "mode": "name"
+          },
+          "repository": {
+            "__rl": true,
+            "value": "aprendendo-n8n",
+            "mode": "name"
+          },
+          "filePath": "github.json",
+          "fileContent": "={{ JSON.stringify($('HTTP Request').item.json, null, 2) }}",
+          "commitMessage": "Atualização"
+        },
+        "type": "n8n-nodes-base.github",
+        "typeVersion": 1.1,
+        "position": [
+          944,
+          16
+        ],
+        "id": "2a62ad46-711d-4528-991c-215a28cf2f30",
+        "name": "Edit a file",
+        "webhookId": "fba40b04-45be-477b-8c2d-45d0f9a4a470",
+        "credentials": {
+          "githubApi": {
+            "id": "koXPYBtIPVu6KAZH",
+            "name": "GitHub account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "HTTP Request": {
+        "main": [
+          [
+            {
+              "node": "Get a file",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Get a file": {
+        "main": [
+          [
+            {
+              "node": "If",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "If": {
+        "main": [
+          [
+            {
+              "node": "Edit a file",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Create a file",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Schedule Trigger": {
+        "main": [
+          [
+            {
+              "node": "HTTP Request",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Guilherme Borges",
+    "name": "1.0.0",
+    "description": "",
+    "autosaved": true,
+    "workflowPublishHistory": [
+      {
+        "createdAt": "2026-04-06T02:16:49.877Z",
+        "id": 11,
+        "workflowId": "w5HEHbieJ2S0Lv2k",
+        "versionId": "c62ed87c-3c63-4f77-ad80-6ca11a4eb02b",
+        "event": "activated",
+        "userId": "50a141fb-15ae-4d54-b50f-8c136e56f95f"
+      }
+    ]
+  }
 }
