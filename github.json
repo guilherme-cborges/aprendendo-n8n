@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-04T20:55:56.954Z",
+  "updatedAt": "2026-04-06T01:01:41.871Z",
   "createdAt": "2026-04-04T20:49:09.498Z",
   "id": "w5HEHbieJ2S0Lv2k",
   "name": "Salvar GIT",
@@ -179,22 +179,11 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        0,
-        176
+        48,
+        80
       ],
       "id": "ac5781af-65eb-4294-920f-b2f34dd58f60",
       "name": "Schedule Trigger"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        0,
-        0
-      ],
-      "id": "0f1e7beb-821d-4175-b38e-832c5eb0c210",
-      "name": "When clicking ‘Execute workflow’"
     }
   ],
   "connections": {
@@ -231,7 +220,7 @@
         ],
         [
           {
-            "node": "Create a file",
+            "node": "Edit a file",
             "type": "main",
             "index": 0
           }
@@ -239,17 +228,6 @@
       ]
     },
     "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "When clicking ‘Execute workflow’": {
       "main": [
         [
           {
@@ -274,9 +252,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "47a139cb-a19f-419c-a7f6-3fc81199479d",
-  "activeVersionId": "47a139cb-a19f-419c-a7f6-3fc81199479d",
-  "versionCounter": 7,
+  "versionId": "d12bf6f8-74a9-4301-8fc0-ee7681e8d03f",
+  "activeVersionId": "6731792c-052d-4cba-aa9e-ca671731d038",
+  "versionCounter": 17,
   "triggerCount": 1,
   "shared": [
     {
@@ -299,9 +277,9 @@
   ],
   "tags": [],
   "activeVersion": {
-    "updatedAt": "2026-04-05T19:23:44.000Z",
-    "createdAt": "2026-04-04T20:55:56.958Z",
-    "versionId": "47a139cb-a19f-419c-a7f6-3fc81199479d",
+    "updatedAt": "2026-04-06T01:01:07.000Z",
+    "createdAt": "2026-04-06T01:01:03.503Z",
+    "versionId": "6731792c-052d-4cba-aa9e-ca671731d038",
     "workflowId": "w5HEHbieJ2S0Lv2k",
     "nodes": [
       {
@@ -476,22 +454,11 @@
         "type": "n8n-nodes-base.scheduleTrigger",
         "typeVersion": 1.3,
         "position": [
-          0,
-          176
+          48,
+          80
         ],
         "id": "ac5781af-65eb-4294-920f-b2f34dd58f60",
         "name": "Schedule Trigger"
-      },
-      {
-        "parameters": {},
-        "type": "n8n-nodes-base.manualTrigger",
-        "typeVersion": 1,
-        "position": [
-          0,
-          0
-        ],
-        "id": "0f1e7beb-821d-4175-b38e-832c5eb0c210",
-        "name": "When clicking ‘Execute workflow’"
       }
     ],
     "connections": {
@@ -545,29 +512,18 @@
             }
           ]
         ]
-      },
-      "When clicking ‘Execute workflow’": {
-        "main": [
-          [
-            {
-              "node": "HTTP Request",
-              "type": "main",
-              "index": 0
-            }
-          ]
-        ]
       }
     },
     "authors": "Guilherme Borges",
-    "name": "1.0",
+    "name": "1.0.0",
     "description": "",
     "autosaved": true,
     "workflowPublishHistory": [
       {
-        "createdAt": "2026-04-05T19:23:44.223Z",
-        "id": 1,
+        "createdAt": "2026-04-06T01:01:07.322Z",
+        "id": 5,
         "workflowId": "w5HEHbieJ2S0Lv2k",
-        "versionId": "47a139cb-a19f-419c-a7f6-3fc81199479d",
+        "versionId": "6731792c-052d-4cba-aa9e-ca671731d038",
         "event": "activated",
         "userId": "50a141fb-15ae-4d54-b50f-8c136e56f95f"
       }
