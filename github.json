@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-06T02:05:28.605Z",
+  "updatedAt": "2026-04-06T02:13:27.836Z",
   "createdAt": "2026-04-04T20:49:09.498Z",
   "id": "w5HEHbieJ2S0Lv2k",
   "name": "Salvar GIT",
@@ -76,7 +76,7 @@
           "conditions": [
             {
               "id": "5cffe922-5e7a-4acf-b834-e0d75add717e",
-              "leftValue": "={{ $json.error.message }}",
+              "leftValue": "={{ $json.sha }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
@@ -139,8 +139,8 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        912,
-        176
+        896,
+        192
       ],
       "id": "4856fad8-9fd4-4bf6-9490-f4b9c14fa13e",
       "name": "Create a file",
@@ -158,19 +158,22 @@
         "operation": "edit",
         "owner": {
           "__rl": true,
-          "mode": "list",
-          "value": ""
+          "value": "guilherme-cborges",
+          "mode": "name"
         },
         "repository": {
           "__rl": true,
-          "mode": "list",
-          "value": ""
-        }
+          "value": "aprendendo-n8n",
+          "mode": "name"
+        },
+        "filePath": "github.json",
+        "fileContent": "={{ JSON.stringify($('HTTP Request').item.json, null, 2) }}",
+        "commitMessage": "Atualização"
       },
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        912,
+        896,
         16
       ],
       "id": "2a62ad46-711d-4528-991c-215a28cf2f30",
@@ -250,9 +253,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "82fc6d32-a095-4f14-9f3e-3e003d45b4a7",
+  "versionId": "436f5d22-f869-4e21-a141-57e1c21bc41c",
   "activeVersionId": null,
-  "versionCounter": 77,
+  "versionCounter": 99,
   "triggerCount": 1,
   "shared": [
     {
